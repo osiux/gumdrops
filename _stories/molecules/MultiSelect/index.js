@@ -6,13 +6,47 @@ import { action } from '@storybook/addon-actions';
 import readme from './README.md';
 import MultiSelect from '../../../components/molecules/MultiSelect';
 
-const options = Array(10)
-    .fill({})
-    .map((o, i) => ({
-        name: `Option ${i + 1}`,
-        value: i,
+const options = [
+    {
+        name: 'Anyone',
+        value: 'anyone',
         selected: false
-    }));
+    },
+    {
+        name: 'Men',
+        value: 'men',
+        selected: false,
+        options: [
+            {
+                name: 'John',
+                value: 'john',
+                selected: true
+            },
+            {
+                name: 'Sam',
+                value: 'sam',
+                selected: false
+            }
+        ]
+    },
+    {
+        name: 'Women',
+        value: 'women',
+        selected: false,
+        options: [
+            {
+                name: 'Jane',
+                value: 'jane',
+                selected: true
+            },
+            {
+                name: 'Sara',
+                value: 'sara',
+                selected: false
+            }
+        ]
+    }
+];
 
 const sizeOptions = {
     sm: 'sm',
@@ -36,12 +70,19 @@ class MultiSelectOptions extends Component {
         });
     };
 
+    handleChange = newOptions => {
+        this.setState({
+            options: newOptions
+        });
+    };
+
     render() {
         return (
             <MultiSelect
                 placeholder={text('Placeholder', 'Select an option')}
                 size={optionalSelect('Size', sizeOptions, '')}
-                callback={this.handleCallback}
+                callback={this.handleCallback} // @TODO: Deprecate?
+                onChange={this.handleChange}
                 options={this.state.options}
                 className={text('className', '')}
             />
