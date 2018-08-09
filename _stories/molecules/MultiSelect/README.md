@@ -2,7 +2,7 @@
 
 The `<MultiSelect>` component can be used when you need a select component to support multiple options simultaneously.
 
-The state of the multi-select is handled by the parent component. An `onChange` prop handler is provided that will be called with the updated list of options whenever there's a change. There's also a the `callback` prop that will be called with the changed option (Deprecated?!).
+The state of the multi-select is handled by the parent component. An `onChange` prop handler is provided that will be called with the updated list of options whenever there's a change. There's also a `callback` prop that will be called with the changed option (Deprecated?!).
 
 Multi-select also supports nested options [See Nested Options](#nested-options). When a parent option is selected, all children will be selected. If all children are selected, the parent will be selected too.
 
@@ -13,7 +13,7 @@ Multi-select also supports nested options [See Nested Options](#nested-options).
 | Prop        | Type       | Required | Description                                                                                               |
 | ----------- | ---------- | -------- | --------------------------------------------------------------------------------------------------------- |
 | options     | `Array`    | `True`   | The select options that will make up the dropdown menu. [See Options](#options)                           |
-| callback    | `Function` |          | `Deprecated!?` Callback that is called with the changed item. Example: `callback(index, value, selected)` |
+| callback    | `Function` |          | (Deprecated!?) Callback that is called with the changed item. Example: `callback(index, value, selected)` |
 | onChange    | `Function` |          | Change handler will be called with the updated list of `option` based on user selection                   |
 | placeholder | `String`   |          | Text that appears before any options are selected                                                         |
 | size        | `String`   |          | Size that determines the scale of the UI elements                                                         |
