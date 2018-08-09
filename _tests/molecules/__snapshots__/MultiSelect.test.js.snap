@@ -18,6 +18,7 @@ exports[`Expect <MultiSelect> to render 1`] = `
 >
   <div
     className="gds-multi-select custom-class gds-multi-select--xs"
+    placeholder="placeholder"
   >
     <button
       aria-controls="MultiSelect_region_TXVsdGlTZWxlY3Q=0"
@@ -42,43 +43,52 @@ exports[`Expect <MultiSelect> to render 1`] = `
       id="MultiSelect_region_TXVsdGlTZWxlY3Q=0"
       role="region"
     >
-      <li
-        className="gds-multi-select__menu-item"
-        key="item-0"
+      <MultiSelectMenuItem
+        callback={[Function]}
+        index={0}
+        key="menu-item-0"
+        name="Name"
+        onChange={[Function]}
+        selected={true}
+        value={10}
       >
-        <div
-          className="gds-multi-select__menu-link"
+        <li
+          className="gds-multi-select__menu-item"
         >
           <div
-            className="gds-form-group gds-multi-select__option"
+            className="gds-multi-select__menu-link"
           >
-            <Checkbox
-              checked={true}
-              label="Name"
-              onChange={[Function]}
+            <div
+              className="gds-form-group gds-multi-select__option"
             >
-              <div
-                className="gds-form-group__checkbox"
+              <Checkbox
+                checked={true}
+                label="Name"
+                onChange={[Function]}
               >
-                <label
-                  className="gds-form-group__checkbox-label"
+                <div
+                  className="gds-form-group__checkbox"
                 >
-                  <input
-                    checked={true}
-                    className="gds-form-group__checkbox-input"
-                    onChange={[Function]}
-                    type="checkbox"
-                  />
-                  <span
-                    className="gds-form-group__checkbox-indicator"
-                  />
-                  Name
-                </label>
-              </div>
-            </Checkbox>
+                  <label
+                    className="gds-form-group__checkbox-label"
+                  >
+                    <input
+                      checked={true}
+                      className="gds-form-group__checkbox-input"
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                    <span
+                      className="gds-form-group__checkbox-indicator"
+                    />
+                    Name
+                  </label>
+                </div>
+              </Checkbox>
+            </div>
           </div>
-        </div>
-      </li>
+        </li>
+      </MultiSelectMenuItem>
     </ul>
   </div>
 </MultiSelect>
