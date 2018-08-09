@@ -16,7 +16,7 @@ class MultiSelectSubMenu extends Component {
     };
 
     state = {
-        isOpen: false
+        isOpen: true
     };
 
     _toggleOpen = event => {
