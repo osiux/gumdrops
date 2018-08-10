@@ -13,6 +13,7 @@ const MultiSelectMenuItem = ({
     name,
     onChange,
     onClick,
+    size,
     selected,
     subOptions,
     value
@@ -27,6 +28,7 @@ const MultiSelectMenuItem = ({
                 <Checkbox
                     label={name}
                     checked={selected}
+                    size={size}
                     onChange={() => {
                         callback && callback(index, value, !selected);
                         onChange &&
@@ -43,6 +45,7 @@ MultiSelectMenuItem.propTypes = {
     name: PropTypes.string.isRequired,
     index: PropTypes.number.isRequired,
     isActive: PropTypes.bool,
+    size: PropTypes.string,
     value: PropTypes.any,
     selected: PropTypes.bool,
     children: PropTypes.node,

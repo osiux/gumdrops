@@ -128,6 +128,7 @@ class MultiSelect extends Component {
                                     options={subOptions}
                                     onChange={this._handleChange}
                                     onSubChange={this._handleSubChange(index)}
+                                    size={size}
                                 />
                             ) : (
                                 <MultiSelectMenuItem
@@ -138,6 +139,7 @@ class MultiSelect extends Component {
                                     selected={selected}
                                     callback={callback} // @TODO: deprecate?
                                     onChange={this._handleChange}
+                                    size={size}
                                 />
                             )
                     )}

@@ -26,11 +26,12 @@ class MultiSelectSubMenu extends Component {
 
     render() {
         const { isOpen } = this.state;
-        const { options, onSubChange, ...rest } = this.props;
+        const { options, onSubChange, size, ...rest } = this.props;
         return (
             <MultiSelectMenuItem
                 {...rest}
                 isActive={isOpen}
+                size={size}
                 subOptions={options}
                 onClick={this._toggleOpen}>
                 <ul
@@ -42,6 +43,7 @@ class MultiSelectSubMenu extends Component {
                                 <div className="gds-form-group gds-multi-select__option">
                                     <Checkbox
                                         label={name}
+                                        size={size}
                                         checked={selected}
                                         onChange={() => {
                                             onSubChange({ index, value, selected: !selected });
