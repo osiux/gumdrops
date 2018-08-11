@@ -4,17 +4,6 @@ import Checkbox from './Checkbox';
 import MultiSelectMenuItem from './MultiSelectMenuItem';
 
 class MultiSelectSubMenu extends Component {
-    static propTypes = {
-        options: PropTypes.arrayOf(
-            PropTypes.shape({
-                name: PropTypes.string.isRequired,
-                value: PropTypes.any,
-                selected: PropTypes.bool
-            })
-        ),
-        callback: PropTypes.func.isRequired
-    };
-
     state = {
         isOpen: true
     };
@@ -62,6 +51,7 @@ class MultiSelectSubMenu extends Component {
 MultiSelectSubMenu.propTypes = {
     name: PropTypes.string.isRequired,
     index: PropTypes.number.isRequired,
+    size: PropTypes.string,
     value: PropTypes.any,
     selected: PropTypes.bool,
     children: PropTypes.node,
