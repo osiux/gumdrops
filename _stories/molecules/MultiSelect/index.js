@@ -8,40 +8,55 @@ import MultiSelect from '../../../components/molecules/MultiSelect';
 
 const options = [
     {
-        name: 'Anyone',
-        value: 'anyone',
+        name: 'All Pets',
+        value: 0,
         selected: false
     },
     {
-        name: 'Men',
-        value: 'men',
+        name: 'Dogs',
+        value: 1,
         selected: false,
         options: [
             {
-                name: 'John',
-                value: 'john',
+                name: 'Lassie',
+                value: 1,
                 selected: true
             },
             {
-                name: 'Sam',
-                value: 'sam',
+                name: 'Snoopy',
+                value: 2,
+                selected: true
+            },
+            {
+                name: 'Toto',
+                value: 3,
+                selected: false
+            },
+            {
+                name: 'Brian Griffin',
+                value: 3,
                 selected: false
             }
         ]
     },
     {
-        name: 'Women',
-        value: 'women',
+        name: 'Cats',
+        value: 'cats',
         selected: false,
         options: [
             {
-                name: 'Jane',
-                value: 'jane',
+                name: 'Grumpy Cat',
+                value: 1,
                 selected: true
             },
             {
-                name: 'Sara',
-                value: 'sara',
+                name: 'Lil Bub',
+                value: 2,
+                selected: true
+            },
+            {
+                name: 'Hello Kitty',
+                value: 3,
                 selected: false
             }
         ]
@@ -59,17 +74,6 @@ class MultiSelectOptions extends Component {
         options
     };
 
-    handleCallback = (index, value, selected) => {
-        const options = this.state.options.map((o, i) => ({
-            ...o,
-            selected: i === index ? selected : o.selected
-        }));
-
-        this.setState({
-            options
-        });
-    };
-
     handleChange = newOptions => {
         this.setState({
             options: newOptions
@@ -81,7 +85,6 @@ class MultiSelectOptions extends Component {
             <MultiSelect
                 placeholder={text('Placeholder', 'Select an option')}
                 size={optionalSelect('Size', sizeOptions, '')}
-                callback={this.handleCallback} // @TODO: Deprecate?
                 onChange={this.handleChange}
                 options={this.state.options}
                 className={text('className', '')}

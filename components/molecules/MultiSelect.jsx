@@ -59,9 +59,7 @@ class MultiSelect extends Component {
                 const subOptions = updateOptions(item.options, subItem);
                 if (subOptions) {
                     // update parent if all are selected/unselected
-                    const allSelected = subOptions.reduce(
-                        (acc, cur) => acc.selected === cur.selected && cur.selected
-                    );
+                    const allSelected = !subOptions.map(opt => opt.selected).includes(false);
                     return {
                         ...item,
                         selected: allSelected,
