@@ -1,12 +1,36 @@
 import React, { Component } from 'react';
 import { text } from '@storybook/addon-knobs';
 import { optionalSelect } from '../../../components/utils/optionalSelect';
-import { action } from '@storybook/addon-actions';
+import { selectV2 as select } from '@storybook/addon-knobs';
+// import { action } from '@storybook/addon-actions';
 
 import readme from './README.md';
 import MultiSelect from '../../../components/molecules/MultiSelect';
 
-const options = [
+const optionsA = [
+    {
+        name: 'Lassie',
+        value: 1,
+        selected: true
+    },
+    {
+        name: 'Snoopy',
+        value: 2,
+        selected: true
+    },
+    {
+        name: 'Toto',
+        value: 3,
+        selected: false
+    },
+    {
+        name: 'Brian Griffin',
+        value: 3,
+        selected: false
+    }
+];
+
+const optionsB = [
     {
         name: 'All Pets',
         value: 0,
@@ -63,6 +87,16 @@ const options = [
     }
 ];
 
+const configSelect = {
+    Normal: 'A',
+    Nested: 'B'
+};
+
+const options = {
+    A: optionsA,
+    B: optionsB
+};
+
 const sizeOptions = {
     sm: 'sm',
     xs: 'xs',
@@ -71,8 +105,14 @@ const sizeOptions = {
 
 class MultiSelectOptions extends Component {
     state = {
-        options
+        options: this.props.options
     };
+
+    static getDerivedStateFromProps(props) {
+        return {
+            options: props.options
+        };
+    }
 
     handleChange = newOptions => {
         this.setState({
@@ -93,6 +133,9 @@ class MultiSelectOptions extends Component {
     }
 }
 
-const component = () => <MultiSelectOptions />;
+const component = () => {
+    const selectedOptions = select('Options Config', configSelect, 'A');
+    return <MultiSelectOptions options={options[selectedOptions]} />;
+};
 
 export default [readme, component];
