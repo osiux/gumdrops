@@ -30,7 +30,7 @@ const MultiSelectMenuItem = ({
                     checked={selected}
                     size={size}
                     onChange={() => {
-                        callback && callback(index, value, !selected);
+                        callback && callback(index, value, !selected); // @TODO: deprecated
                         onChange &&
                             onChange({ index, value, selected: !selected, options: subOptions });
                     }}

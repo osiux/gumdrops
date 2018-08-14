@@ -104,6 +104,7 @@ class MultiSelect extends Component {
                     tabIndex={0}
                     className={btnClass}
                     id={this.labelId}
+                    name="multiselectMenu"
                     type="button"
                     onClick={this._toggleDropdown}>
                     <div className="-ellipsis">{this._getPlaceholder()}</div>
